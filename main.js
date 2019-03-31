@@ -3,6 +3,7 @@ let c = canvas.getContext('2d');
 
 function init() {
 
+    alert("hello world");
     update();
 }
 
