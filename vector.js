@@ -12,11 +12,15 @@ class Vector {
     }
 
     subVector(vec) {
-
+        this.x-=vec.x;
+        this.y-=vec.y;
+        return this;
     }
 
     scale(s) {
-        
+        this.x*=s;
+        this.y*=s;
+        return this;        
     }
 
     toString(){
