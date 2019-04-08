@@ -20,11 +20,11 @@ class Vector {
     scale(s) {
         this.x*=s;
         this.y*=s;
-        return this;        
+        return this;
     }
 
     toString(){
-        return '<' + this.x+','+this.y+'>'
+        return '<' + this.x+','+this.y+'>';
     }
     print() {
         console.log(this.toString());
