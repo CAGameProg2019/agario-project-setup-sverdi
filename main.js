@@ -20,12 +20,17 @@ function randomColor(){
 }
 
 function init() {
-    let x = Math.random()* canvas.width;
-    let y = Math.random()* canvas.height;
-    let food = new Food(x, y, 20, randomColor());
-    foods.push(food);
-    update();
+    foods = [];
+    for (var i = 0; i < foodNum; i++){
+        let radius = 10;
+        let x = Math.random()* canvas.width;
+        let y = Math.random()* canvas.height;
+        let food = new Food(x, y, 20, randomColor());
+        foods.push(food);
+    }
 }
+
+
 
 function update() {
 
