@@ -14,9 +14,5 @@ class Food extends Vector {
         c.fill();
     }
 
-    for(var i = 0, i < 100, i++) {
-        draw(c);
-    }
-
 }
 Object.assign(Food, Vector);
