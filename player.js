@@ -4,5 +4,4 @@ class Player extends Food {
         super(x, y, radius, color);
     }
 }
-
 Object.assign(Player, Food);
