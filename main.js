@@ -20,6 +20,13 @@ let colors = [
     "#b3b1b1"
 ];
 
+let strokeColors = [
+    "#33576b",
+    "#fcbe3a",
+    "#c2d400",
+    "#22a5d1",
+    "#a2a1b1"
+];
 // function calcVel(){
 //     velVector.x = (mpos.x - player.x)/10;
 //     velVector.y = (mpos.y - player.y)/10;
@@ -29,7 +36,7 @@ function generateFood(){
     let x = Math.random()* canvas.width;
     let y = Math.random()* canvas.height;
     let color = randomColor();
-    let food = new Food(x, y, 10, color);
+    let food = new Food(x, y, 8, color);
     foods.push(food);
 }
 
@@ -40,12 +47,13 @@ function randomColor() {
 }
 
 function init() {
-    var nameQuestion = prompt;
-    prompt("What's your name?");
-    console.log(nameQuestion);
     mpos = new Vector(canvas.width/2, canvas.height/2);
 
-    player = new Player(canvas.width/2, canvas.height/2, 25, randomColor());
+    let name = prompt("Enter your name: ");
+
+    let color = randomColor();
+    let stroke = strokeColors[colors.indexOf(color)];
+    player = new Player(canvas.width/2, canvas.height/2, 25, color, stroke, name);
 
     for (let i = 0; i < 100; i++) {
         generateFood();
