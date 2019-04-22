@@ -53,7 +53,7 @@ function init() {
 
     let color = randomColor();
     let stroke = strokeColors[colors.indexOf(color)];
-    player = new Player(canvas.width/2, canvas.height/2, 25, color, stroke, name);
+    player = new Player(canvas.width/2, canvas.height/2, 25, color, stroke, name, 7);
 
     for (let i = 0; i < 100; i++) {
         generateFood();
@@ -67,8 +67,7 @@ function update() {
 
     c.clearRect(0, 0, canvas.width, canvas.height);
 
-    player.x = mpos.x;
-    player.y = mpos.y;
+    player.update(mpos);
 
     for(let i = 0; i < foods.length; i++) {
         let eaten = player.intersects(foods[i]);
