@@ -11,6 +11,7 @@ let velVector = new Vector(0, 0);
 
 let player;
 let foods = [];
+let viruses = [];
 
 let colors = [
     "#44576f",
@@ -40,6 +41,13 @@ function generateFood(){
     foods.push(food);
 }
 
+function generateVirus(){
+    let x = Math.random()* canvas.width;
+    let y = Math.random()* canvas.height;
+    let virus = new Virus(x, y, "light green");
+    viruses.push(virus);
+}
+
 
 function randomColor() {
     let index = Math.floor(Math.random() * colors.length);
@@ -58,6 +66,9 @@ function init() {
     for (let i = 0; i < 100; i++) {
         generateFood();
     }
+
+    generateVirus();
+
     update();
 }
 
@@ -78,6 +89,15 @@ function update() {
             foods.splice(i, 1);
             i--;
         }
+    }
+
+    for (let i = 0; i < viruses.length; i++) {
+        let collision = player.intersects(viruses[i]);
+
+        viruses[i].draw(c);
+
+        if (collision)
+            player.subtractMass(50);
     }
 
     while(foods.length < FOOD_COUNT){

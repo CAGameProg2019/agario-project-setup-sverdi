@@ -33,5 +33,9 @@ class Food extends Vector {
         this.mass += m;
     }
 
+    subtractMass(m) {
+        this.mass -= m;
+    }
+
 }
 Object.assign(Food, Vector);
