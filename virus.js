@@ -1,6 +1,6 @@
 class Virus extends Food {
     constructor(x, y, color) {
-        super(x, y, 100, color);
+        super(x, y, 8, "#44576f");
     }
 }
 

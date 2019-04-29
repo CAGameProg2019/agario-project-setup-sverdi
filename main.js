@@ -96,8 +96,13 @@ function update() {
 
         viruses[i].draw(c);
 
-        if (collision)
-            player.subtractMass(50);
+        if (collision){
+            let x = Math.random()* canvas.width;
+            let y = Math.random()* canvas.height;
+            viruses[i].x = x;
+            viruses[i].y = y;
+            player.subtractMass(4000);
+        }
     }
 
     while(foods.length < FOOD_COUNT){
